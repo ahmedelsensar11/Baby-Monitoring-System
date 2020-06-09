@@ -1,0 +1,158 @@
+.card
+{
+  border-width: 0px;
+  background-color:#ffff ;
+}
+
+.gam-bg
+{
+  background-color: #f9fafd;
+}
+
+/*
+************************************************************************
+Motor and Fan Icons 
+************************************************************************
+*/
+
+.fa-size
+{
+  font-size: 130px;
+  margin: 50px 0px;
+  color: red;
+  
+}
+
+
+
+.fa-green
+{
+color: green;
+}
+
+.sound-height
+{
+  color: red;
+}
+
+.percent
+{
+  margin: 0px 0px;
+}
+
+.fa-live-color
+{
+  color: #307bbb;
+}
+
+/* Animation of fan */
+.fa-speed1
+{
+  animation-name: spin;
+  animation-duration: 530ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+  
+}
+.fa-speed2
+{
+  animation-name: spin;
+  animation-duration: 400ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+  
+}
+.fa-speed3
+{
+  animation-name: spin;
+  animation-duration: 250ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+  
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+
+/*
+************************************************************************
+toggle switch
+************************************************************************
+*/
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 34px;
+}
+.large
+{
+  width: 50px;
+  height: 30px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(189, 188, 188);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: green;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(66px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.largeRadio
+{
+  border: 2px solid red ;
+}

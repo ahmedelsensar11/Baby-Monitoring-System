@@ -1,0 +1,95 @@
+<div class="container">
+    <div class="row">
+
+        <!-- Motor control -->
+        <div class="col-md-6 p-2 mb-5">
+            <div class="card w-75 text-center m-auto">
+                <!-- Motor icon -->
+                <i class="fas fa-power-off fa-size mb-4" [class.fa-green]="motorIsOn==true"></i>
+                <div class="card-body text-center">
+
+                    <!-- header -->
+                    <h2 class="mb-3">Motor Is <span>{{motorStatus}}</span></h2>
+
+                    <!-- motor switch by checkbox-->
+                    <div class="custom-control custom-switch m-auto p-0">
+                        <label class="switch">
+
+                            <input type="checkbox" [(ngModel)]="motorIsOn" (change)="checkMotorStatus()" />
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+
+                    <!-- motor levels build by radio checkbox-->
+                    <div class="btn-group btn-group-toggle mt-3" *ngIf="motorIsOn==true">
+
+                        <label class="btn btn-outline-success px-4" [class.active]="motorLevel==1">
+                            <input type="radio" name="motorLevel" id="option1" autocomplete="off"
+                                [(ngModel)]="motorLevel" (change)="changeMotorLevels()" value="1"> 1
+                        </label>
+
+                        <label class="btn btn-outline-success px-4" [class.active]="motorLevel==2">
+                            <input type="radio" name="motorLevel" id="option2" autocomplete="off"
+                                [(ngModel)]="motorLevel" (change)="changeMotorLevels()" value="2"> 2
+                        </label>
+
+                        <label class="btn btn-outline-success px-4" [class.active]="motorLevel==3">
+                            <input type="radio" name="motorLevel" id="option3" autocomplete="off"
+                                [(ngModel)]="motorLevel" (change)="changeMotorLevels()" value="3"> 3
+                        </label>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Fan control -->
+        <div class="col-md-6 p-2 mb-5">
+            <div class="card w-75 text-center m-auto">
+                <i class="fas fa-asterisk fa-size mb-4" [class.fa-green]="fanIsOn==true"
+                
+                    [class.fa-speed1]="fanLevel==1 &&fanIsOn"
+                    [class.fa-speed2]="fanLevel==2 &&fanIsOn"
+                    [class.fa-speed3]="fanLevel==3 &&fanIsOn"></i>
+
+                <div class="card-body text-center ">
+
+                    <!-- fan status-->
+                    <h2 class="mb-3">Fan Is <span>{{fanStatus}}</span></h2>
+
+                    <!-- fan switch by checkbox-->
+                    <div class="custom-control custom-switch m-auto p-0">
+                        <label class="switch">
+
+                            <input type="checkbox" [(ngModel)]="fanIsOn" (change)="checkFanStatus()" />
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+
+                    <!-- fan levels build by radio checkbox-->
+                    <div class="btn-group btn-group-toggle mt-3" *ngIf="fanIsOn==true">
+
+                        <label class="btn btn-outline-success px-4" [class.active]="fanLevel==1">
+                            <input type="radio" name="fanLevel" #theState id="option1" autocomplete="off"
+                                [(ngModel)]="fanLevel" (change)="changeFanLevels()" value=1> 1
+                        </label>
+
+                        <label class="btn btn-outline-success px-4" [class.active]="fanLevel==2">
+                            <input type="radio" name="fanLevel" #theState id="option2" autocomplete="off"
+                                [(ngModel)]="fanLevel" (change)="changeFanLevels()" value=2> 2
+                        </label>
+
+                        <label class="btn btn-outline-success px-4" [class.active]="fanLevel==3">
+                            <input type="radio" name="fanLevel" #theState id="option3" autocomplete="off"
+                                [(ngModel)]="fanLevel" (change)="changeFanLevels()" value=3> 3
+                        </label>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>        

@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="../../assets/img/login1.png" class="img-fluid" alt="login image">
+        </div>
+        <div class="col-md-6">
+            <div>
+                <h2>Register Now</h2>
+            </div>
+            <form [formGroup]='registerData' (ngSubmit)='signUp()'>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" class="form-control" formControlName="userName">
+                    <div *ngIf="registerData.controls.userName.touched && registerData.controls.userName.errors!=null"
+                        class="alert alert-danger" role="alert">
+                        <strong>Username must be between 3-50 character</strong>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" [(ngModel)]="email" formControlName="userEmail">
+                    <div *ngIf="registerData.controls.userEmail.touched && registerData.controls.userEmail.errors!=null"
+                        class="alert alert-danger" role="alert">
+                        <strong>Email must be valid</strong>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" [(ngModel)]="password" formControlName="userPassword">
+                    <div *ngIf="registerData.controls.userPassword.touched && registerData.controls.userPassword.errors!=null"
+                        class="alert alert-danger" role="alert">
+                        <strong>Password must be between 3 and 30 </strong>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="code">Verification Code</label>
+                    <input type="text" name="code" class="form-control" formControlName="machineCode" id="code">
+                    <div *ngIf="registerData.controls.machineCode.touched && registerData.controls.machineCode.errors!=null"
+                        class="alert alert-danger" role="alert">
+                        <strong>Verification Code must be between 3 and 30 </strong>
+                    </div>
+                </div>
+
+                <button type="submit" [disabled]="registerData.invalid" class="btn btn-primary mb-2">Submit</button>
+                <span>   or <a href="/login">Login</a></span>
+            </form>
+        </div>
+    </div>
+</div>

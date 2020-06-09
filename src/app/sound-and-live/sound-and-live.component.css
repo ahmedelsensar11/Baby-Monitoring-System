@@ -1,0 +1,46 @@
+.card
+{
+  border-width: 0px;
+  background-color:#ffff ;
+}
+
+.gam-bg
+{
+  background-color: #f9fafd;
+}
+
+/*
+************************************************************************
+Motor and Fan Icons 
+************************************************************************
+*/
+
+.fa-size
+{
+  font-size: 130px;
+  margin: 50px 0px;
+  color: red;
+  
+}
+
+
+
+.fa-green
+{
+color: green;
+}
+
+.sound-height
+{
+  color: red;
+}
+
+.percent
+{
+  margin: 50px 0px;
+}
+
+.fa-live-color
+{
+  color: #307bbb;
+}

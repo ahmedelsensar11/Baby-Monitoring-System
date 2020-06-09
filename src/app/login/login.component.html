@@ -1,0 +1,37 @@
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="../../assets/img/cradle.png" class="img-fluid" alt="login image">
+        </div>
+        <div class="col-md-6 my-4">
+            <div>
+                <h2>Login Now</h2>
+            </div>
+            <form [formGroup]="loginData" (ngSubmit)="signIn()">
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" [(ngModel)]="email" formControlName="userEmail">
+                    <div *ngIf="loginData.controls.userEmail.touched && loginData.controls.userEmail.errors!=null"
+                        class="alert alert-danger" role="alert">
+                        <strong>Email must be valid</strong>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" [(ngModel)]="password" formControlName="userPassword">
+                    <div *ngIf="loginData.controls.userPassword.touched && loginData.controls.userPassword.errors!=null"
+                        class="alert alert-danger" role="alert">
+                        <strong>Password must be between 3 and 30 </strong>
+                    </div>
+                </div>
+
+                <button type="submit" [disabled]='loginData.invalid' class="btn btn-primary mb-2">Login</button>
+                <p>or <a href="/register">Register</a></p>
+                
+            </form>
+        </div>
+    </div>
+</div>

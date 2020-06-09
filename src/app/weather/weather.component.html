@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 p-2 mb-5 text-center ">
+            <div class="card w-75 m-auto pt-5">
+                <div class="c100 p{{getPercentage(temperature)}} orange  big m-auto">
+                    <span class="statusItem">{{temperature}}<span>°C</span></span>
+                    <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill"></div>
+                    </div>
+                </div>
+                <div class="card-body mt-4">
+                    <h2>Temperature</h2>
+                    <p class="card-text ">Some quick example text to build on the card title and make up the bulk of
+                        the card's content.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 p-2 mb-5">
+            <div class="card w-75 m-auto text-center pt-5">
+                <div class="c100 p{{getPercentage(humidity)}}  big m-auto">
+                    <span class="statusItem">{{humidity}}<span>%</span></span>
+                    <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill"></div>
+                    </div>
+                </div>
+                <div class="card-body text-center mt-4 ">
+                    <h2>Humditity</h2>
+                    <p class="card-text text-center">Some quick example text to build on the card title and make up
+                        the bulk of
+                        the card's content.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>        
